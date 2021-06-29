@@ -3,9 +3,10 @@ package websvr
 import (
 	"crypto/tls"
 	x "crypto/x509"
-	"github.com/whiskerman/gmsm-1/gmtls"
-	"github.com/whiskerman/gmsm-1/x509"
 	"io/ioutil"
+
+	"github.com/whiskerman/gmsm/gmtls"
+	"github.com/whiskerman/gmsm/x509"
 )
 
 const (
@@ -24,7 +25,7 @@ const (
 )
 
 // RSA配置
-func loadRsaConfig() (*gmtls.Config, error) {
+func LoadRsaConfig() (*gmtls.Config, error) {
 	cert, err := gmtls.LoadX509KeyPair(rsaCertPath, rsaKeyPath)
 	if err != nil {
 		return nil, err
@@ -33,7 +34,7 @@ func loadRsaConfig() (*gmtls.Config, error) {
 }
 
 // SM2配置
-func loadSM2Config() (*gmtls.Config, error) {
+func LoadSM2Config() (*gmtls.Config, error) {
 	sigCert, err := gmtls.LoadX509KeyPair(sm2SignCertPath, sm2SignKeyPath)
 	if err != nil {
 		return nil, err
@@ -49,7 +50,7 @@ func loadSM2Config() (*gmtls.Config, error) {
 }
 
 // 切换GMSSL/TSL
-func loadAutoSwitchConfig() (*gmtls.Config, error) {
+func LoadAutoSwitchConfig() (*gmtls.Config, error) {
 	rsaKeypair, err := gmtls.LoadX509KeyPair(rsaCertPath, rsaKeyPath)
 	if err != nil {
 		return nil, err
@@ -67,7 +68,7 @@ func loadAutoSwitchConfig() (*gmtls.Config, error) {
 }
 
 // 要求客户端身份认证
-func loadAutoSwitchConfigClientAuth() (*gmtls.Config, error) {
+func LoadAutoSwitchConfigClientAuth() (*gmtls.Config, error) {
 	config, err := loadAutoSwitchConfig()
 	if err != nil {
 		return nil, err
@@ -78,7 +79,7 @@ func loadAutoSwitchConfigClientAuth() (*gmtls.Config, error) {
 }
 
 // 获取 客户端服务端双向身份认证 配置
-func bothAuthConfig() (*gmtls.Config, error) {
+func BothAuthConfig() (*gmtls.Config, error) {
 	// 信任的根证书
 	certPool := x509.NewCertPool()
 	cacert, err := ioutil.ReadFile(SM2CaCertPath)
@@ -100,7 +101,7 @@ func bothAuthConfig() (*gmtls.Config, error) {
 }
 
 // 获取 单向身份认证（只认证服务端） 配置
-func singleSideAuthConfig() (*gmtls.Config, error) {
+func SingleSideAuthConfig() (*gmtls.Config, error) {
 	// 信任的根证书
 	certPool := x509.NewCertPool()
 	cacert, err := ioutil.ReadFile(SM2CaCertPath)
@@ -116,7 +117,7 @@ func singleSideAuthConfig() (*gmtls.Config, error) {
 }
 
 // 获取 客户端服务端双向身份认证 配置
-func rsaBothAuthConfig() (*tls.Config, error) {
+func RsaBothAuthConfig() (*tls.Config, error) {
 	// 信任的根证书
 	certPool := x.NewCertPool()
 	cacert, err := ioutil.ReadFile(RSACaCertPath)
@@ -138,7 +139,7 @@ func rsaBothAuthConfig() (*tls.Config, error) {
 }
 
 // 获取 单向身份认证（只认证服务端） 配置
-func rsaSingleSideAuthConfig() (*tls.Config, error) {
+func RsaSingleSideAuthConfig() (*tls.Config, error) {
 	// 信任的根证书
 	certPool := x.NewCertPool()
 	cacert, err := ioutil.ReadFile(RSACaCertPath)
