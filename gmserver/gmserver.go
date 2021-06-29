@@ -6,6 +6,8 @@ import (
 	"io/ioutil"
 	"log"
 	"net/http"
+	"os"
+	"os/signal"
 	"testing"
 	"time"
 
@@ -126,14 +128,19 @@ func gmClientRun() {
 var end chan bool
 
 func main() {
-	end = make(chan bool, 64)
+
+	c := make(chan os.Signal)
+	signal.Notify(c)
 	go ServerRun()
+	s := <-c
+	log.Println(s)
 	time.Sleep(1000000)
+	//end <- true
 }
 func Test_tls(t *testing.T) {
 	end = make(chan bool, 64)
 	go ServerRun()
-	time.Sleep(1000000)
+	time.Sleep(1000000000)
 	go ClientRun()
 	<-end
 	go gmClientRun()
