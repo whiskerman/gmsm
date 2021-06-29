@@ -1,10 +1,12 @@
-module github.com/tjfoc/gmsm
+module github.com/whiskerman/gmsm-1
 
-go 1.14
+go 1.16
 
 require (
 	github.com/golang/protobuf v1.4.2
-	golang.org/x/crypto v0.0.0-20201012173705-84dcc777aaee
-	golang.org/x/net v0.0.0-20201010224723-4f7140c49acb
+	github.com/whiskerman/gmsm-1 v1.4.0
+	github.com/whiskerman/gmsm-1/gm-tls v1.0.1 // indirect
+	golang.org/x/crypto v0.0.0-20210616213533-5ff15b29337e
+	golang.org/x/net v0.0.0-20210226172049-e18ecbb05110
 	google.golang.org/grpc v1.31.0
 )
