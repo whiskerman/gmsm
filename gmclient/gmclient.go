@@ -127,7 +127,10 @@ var end chan bool
 
 func main() {
 	end = make(chan bool, 64)
-	go ServerRun()
+	go gmClientRun()
+	//go ServerRun()
+	<-end
+
 }
 func Test_tls(t *testing.T) {
 	end = make(chan bool, 64)

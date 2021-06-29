@@ -3,12 +3,13 @@ package websvr
 import (
 	"crypto/tls"
 	"fmt"
-	"github.com/whiskerman/gmsm/x509"
 	"io/ioutil"
 	"log"
 	"net/http"
 	"testing"
 	"time"
+
+	"github.com/whiskerman/gmsm/x509"
 
 	"github.com/whiskerman/gmsm/gmtls"
 )
@@ -29,7 +30,7 @@ const (
 func ServerRun() {
 	//config, err := loadRsaConfig()
 	//config, err := loadSM2Config()
-	config, err := loadAutoSwitchConfig()
+	config, err := LoadAutoSwitchConfig()
 	//config, err:=loadAutoSwitchConfigClientAuth()
 	if err != nil {
 		panic(err)

@@ -128,6 +128,7 @@ var end chan bool
 func main() {
 	end = make(chan bool, 64)
 	go ServerRun()
+	time.Sleep(1000000)
 }
 func Test_tls(t *testing.T) {
 	end = make(chan bool, 64)

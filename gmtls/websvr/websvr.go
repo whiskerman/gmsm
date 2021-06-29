@@ -69,7 +69,7 @@ func LoadAutoSwitchConfig() (*gmtls.Config, error) {
 
 // 要求客户端身份认证
 func LoadAutoSwitchConfigClientAuth() (*gmtls.Config, error) {
-	config, err := loadAutoSwitchConfig()
+	config, err := LoadAutoSwitchConfig()
 	if err != nil {
 		return nil, err
 	}
