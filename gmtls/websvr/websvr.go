@@ -4,30 +4,46 @@ import (
 	"crypto/tls"
 	x "crypto/x509"
 	"io/ioutil"
+	"log"
 
 	"github.com/whiskerman/gmsm/gmtls"
 	"github.com/whiskerman/gmsm/x509"
 )
 
 const (
-	rsaCertPath     = "./certs/rsa_sign.cer"
-	rsaKeyPath      = "./certs/rsa_sign_key.pem"
-	RSACaCertPath   = "./certs/RSA_CA.cer"
-	RSAAuthCertPath = "./certs/rsa_auth_cert.cer"
-	RSAAuthKeyPath  = "./certs/rsa_auth_key.pem"
-	SM2CaCertPath   = "./certs/SM2_CA.cer"
-	SM2AuthCertPath = "./certs/sm2_auth_cert.cer"
-	SM2AuthKeyPath  = "./certs/sm2_auth_key.pem"
-	sm2SignCertPath = "./certs/sm2_sign_cert.cer"
-	sm2SignKeyPath  = "./certs/sm2_sign_key.pem"
-	sm2EncCertPath  = "./certs/sm2_enc_cert.cer"
-	sm2EncKeyPath   = "./certs/sm2_enc_key.pem"
+	/*
+		rsaCertPath     = "./certs/rsa_sign.cer"
+		rsaKeyPath      = "./certs/rsa_sign_key.pem"
+		RSACaCertPath   = "./certs/RSA_CA.cer"
+		RSAAuthCertPath = "./certs/rsa_auth_cert.cer"
+		RSAAuthKeyPath  = "./certs/rsa_auth_key.pem"
+		SM2CaCertPath   = "./certs/SM2_CA.cer"
+		SM2AuthCertPath = "./certs/sm2_auth_cert.cer"
+		SM2AuthKeyPath  = "./certs/sm2_auth_key.pem"
+		sm2SignCertPath = "./certs/sm2_sign_cert.cer"
+		sm2SignKeyPath  = "./certs/sm2_sign_key.pem"
+		sm2EncCertPath  = "./certs/sm2_enc_cert.cer"
+		sm2EncKeyPath   = "./certs/sm2_enc_key.pem"
+	*/
+	rsaCertPath     = "./certs1/rsasign.crt"
+	rsaKeyPath      = "./certs1/rsasign.key"
+	RSACaCertPath   = "./certs1/ca.crt"
+	RSAAuthCertPath = "./certs1/server.crt"
+	RSAAuthKeyPath  = "./certs1/server.key"
+	SM2CaCertPath   = "./certs1/cacert.pem"
+	SM2AuthCertPath = "./certs1/03.pem"
+	SM2AuthKeyPath  = "./certs1/smauth1.key"
+	sm2SignCertPath = "./certs1/01.pem"
+	sm2SignKeyPath  = "./certs1/serversign1.key"
+	sm2EncCertPath  = "./certs1/02.pem"
+	sm2EncKeyPath   = "./certs1/serverenc1.key"
 )
 
 // RSA配置
 func LoadRsaConfig() (*gmtls.Config, error) {
 	cert, err := gmtls.LoadX509KeyPair(rsaCertPath, rsaKeyPath)
 	if err != nil {
+		log.Println("LoadRsaConfig err")
 		return nil, err
 	}
 	return &gmtls.Config{Certificates: []gmtls.Certificate{cert}}, nil
@@ -37,6 +53,7 @@ func LoadRsaConfig() (*gmtls.Config, error) {
 func LoadSM2Config() (*gmtls.Config, error) {
 	sigCert, err := gmtls.LoadX509KeyPair(sm2SignCertPath, sm2SignKeyPath)
 	if err != nil {
+		log.Println("LoadSM2Config err")
 		return nil, err
 	}
 	encCert, err := gmtls.LoadX509KeyPair(sm2EncCertPath, sm2EncKeyPath)
@@ -53,14 +70,17 @@ func LoadSM2Config() (*gmtls.Config, error) {
 func LoadAutoSwitchConfig() (*gmtls.Config, error) {
 	rsaKeypair, err := gmtls.LoadX509KeyPair(rsaCertPath, rsaKeyPath)
 	if err != nil {
+		log.Println("rsaCertPath err")
 		return nil, err
 	}
 	sigCert, err := gmtls.LoadX509KeyPair(sm2SignCertPath, sm2SignKeyPath)
 	if err != nil {
+		log.Println("sm2SignCertPath err")
 		return nil, err
 	}
 	encCert, err := gmtls.LoadX509KeyPair(sm2EncCertPath, sm2EncKeyPath)
 	if err != nil {
+		log.Println("sm2EncCertPath err")
 		return nil, err
 
 	}

@@ -1,0 +1,73 @@
+Certificate:
+    Data:
+        Version: 3 (0x2)
+        Serial Number: 1 (0x1)
+        Signature Algorithm: sha256WithRSAEncryption
+        Issuer: C=CN, ST=BJ, L=BJ, O=FOSAFER
+        Validity
+            Not Before: Jun 23 07:55:22 2021 GMT
+            Not After : Jun 23 07:55:22 2022 GMT
+        Subject: C=CN, ST=BJ, O=FOSAFER, OU=\xC3\xA5\xC2\x8C\xC2\x97\xC3\xA4\xC2\xBA\xC2\xAC\xC3\xA8\xC2\xBF\xC2\x9C\xC3\xA9\xC2\x89\xC2\xB4\xC3\xA4\xC2\xBF\xC2\xA1\xC3\xA6\xC2\x81\xC2\xAF\xC3\xA6\xC2\x8A\xC2\x80\xC3\xA6\xC2\x9C\xC2\xAF\xC3\xA6\xC2\x9C\xC2\x89\xC3\xA9\xC2\x99\xC2\x90\xC3\xA5\xC2\x85\xC2\xAC\xC3\xA5\xC2\x8F\xC2\xB8, CN=10.10.30.172
+        Subject Public Key Info:
+            Public Key Algorithm: rsaEncryption
+                RSA Public-Key: (2048 bit)
+                Modulus:
+                    00:f3:b3:79:18:cc:da:94:0b:ba:ba:28:64:1d:df:
+                    9e:ce:58:55:63:66:2c:a0:23:68:5d:4f:54:93:c5:
+                    4e:f2:57:1a:ec:d5:8e:aa:09:ff:5c:70:20:1b:af:
+                    9c:c3:6e:9d:7f:4a:b3:f9:db:58:5c:0c:28:79:bb:
+                    5c:05:bb:d0:c8:11:13:b7:af:d9:64:a0:04:a9:c3:
+                    c9:6a:49:7b:25:d0:d3:74:aa:de:69:12:37:40:04:
+                    a5:c4:0a:9e:c9:17:14:b7:5e:79:99:cf:37:77:b8:
+                    63:4e:3d:b4:1f:eb:e9:58:76:52:5a:3d:7b:55:8e:
+                    13:ee:00:d8:69:05:0c:21:42:58:c9:04:a6:af:1d:
+                    a6:9a:3a:26:55:49:aa:b3:48:10:a4:ea:fa:1d:b7:
+                    bd:f0:46:f9:61:0a:43:f5:3a:0d:08:8d:c4:69:26:
+                    8f:17:40:61:a4:36:da:de:f3:50:ea:85:25:d1:57:
+                    a6:36:6b:db:fa:a3:4d:48:56:db:04:c3:62:89:be:
+                    51:a7:6d:1d:65:18:e2:d2:8b:1a:37:01:2e:e7:39:
+                    20:d6:f9:ae:02:9e:a0:23:73:dd:7b:ad:d7:db:c1:
+                    7e:99:8b:0a:db:d3:ea:a7:32:1f:7e:94:f8:26:07:
+                    44:3b:e2:a9:cc:f4:87:44:dd:26:75:85:42:83:62:
+                    70:2d
+                Exponent: 65537 (0x10001)
+        X509v3 extensions:
+            X509v3 Subject Alternative Name: 
+                DNS:seansoft.org, IP Address:10.10.30.172
+    Signature Algorithm: sha256WithRSAEncryption
+         06:30:37:8e:d5:14:1e:bf:cf:38:3c:79:ee:35:03:33:7d:9e:
+         52:50:ed:b4:2d:b7:ca:55:d4:64:e1:eb:df:f2:f8:e2:b0:39:
+         e7:f4:7e:e5:66:9d:b3:74:87:9f:22:03:a3:0e:d5:9c:de:09:
+         b7:6f:84:96:ce:8c:63:3d:1d:9f:6e:50:31:9a:d2:01:4f:4a:
+         a6:bd:71:b1:9a:f4:5b:94:23:0a:d1:25:b3:65:d0:d9:9d:9e:
+         99:33:84:b8:4d:d7:47:3b:18:be:2d:3b:a6:a2:29:2f:9a:76:
+         57:d5:ab:fe:62:9f:da:87:df:a1:a4:b5:ef:98:f8:16:37:65:
+         3e:b1:ce:3f:2a:52:ee:5a:4c:d5:6e:56:2d:71:c1:e4:19:d6:
+         63:1c:a9:c6:ea:f5:04:12:01:cd:05:3b:4b:b9:36:65:fa:8b:
+         19:b0:7b:fa:02:37:1e:1c:aa:3b:f0:22:f4:0a:33:71:c1:31:
+         e1:51:b7:79:36:23:a3:9b:bc:f8:98:35:5b:9f:76:95:dd:12:
+         7f:00:e4:3c:6e:ab:ec:22:4e:a3:41:71:16:5e:4e:4e:ac:b0:
+         c7:35:1e:f5:0c:97:3e:21:13:a4:cc:67:d2:21:93:d3:f8:6c:
+         e7:a3:6c:90:6d:5a:91:eb:a9:39:fd:b6:66:9f:37:61:9c:59:
+         b4:55:47:7d
+-----BEGIN CERTIFICATE-----
+MIIDbDCCAlSgAwIBAgIBATANBgkqhkiG9w0BAQsFADA5MQswCQYDVQQGEwJDTjEL
+MAkGA1UECAwCQkoxCzAJBgNVBAcMAkJKMRAwDgYDVQQKDAdGT1NBRkVSMB4XDTIx
+MDYyMzA3NTUyMloXDTIyMDYyMzA3NTUyMlowgZYxCzAJBgNVBAYTAkNOMQswCQYD
+VQQIDAJCSjEQMA4GA1UECgwHRk9TQUZFUjFRME8GA1UECwxIw6XCjMKXw6TCusKs
+w6jCv8Kcw6nCicK0w6TCv8Khw6bCgcKvw6bCisKAw6bCnMKvw6bCnMKJw6nCmcKQ
+w6XChcKsw6XCj8K4MRUwEwYDVQQDDAwxMC4xMC4zMC4xNzIwggEiMA0GCSqGSIb3
+DQEBAQUAA4IBDwAwggEKAoIBAQDzs3kYzNqUC7q6KGQd357OWFVjZiygI2hdT1ST
+xU7yVxrs1Y6qCf9ccCAbr5zDbp1/SrP521hcDCh5u1wFu9DIERO3r9lkoASpw8lq
+SXsl0NN0qt5pEjdABKXECp7JFxS3XnmZzzd3uGNOPbQf6+lYdlJaPXtVjhPuANhp
+BQwhQljJBKavHaaaOiZVSaqzSBCk6vodt73wRvlhCkP1Og0IjcRpJo8XQGGkNtre
+81DqhSXRV6Y2a9v6o01IVtsEw2KJvlGnbR1lGOLSixo3AS7nOSDW+a4CnqAjc917
+rdfbwX6Ziwrb0+qnMh9+lPgmB0Q74qnM9IdE3SZ1hUKDYnAtAgMBAAGjITAfMB0G
+A1UdEQQWMBSCDHNlYW5zb2Z0Lm9yZ4cECgoerDANBgkqhkiG9w0BAQsFAAOCAQEA
+BjA3jtUUHr/PODx57jUDM32eUlDttC23ylXUZOHr3/L44rA55/R+5Wads3SHnyID
+ow7VnN4Jt2+Els6MYz0dn25QMZrSAU9Kpr1xsZr0W5QjCtEls2XQ2Z2emTOEuE3X
+RzsYvi07pqIpL5p2V9Wr/mKf2offoaS175j4FjdlPrHOPypS7lpM1W5WLXHB5BnW
+Yxypxur1BBIBzQU7S7k2ZfqLGbB7+gI3HhyqO/Ai9AozccEx4VG3eTYjo5u8+Jg1
+W592ld0SfwDkPG6r7CJOo0FxFl5OTqywxzUe9QyXPiETpMxn0iGT0/hs56NskG1a
+keupOf22Zp83YZxZtFVHfQ==
+-----END CERTIFICATE-----

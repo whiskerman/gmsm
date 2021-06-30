@@ -16,16 +16,16 @@ import (
 )
 
 const (
-	// rsaCertPath = "certs/rsa_sign.cer"
-	// rsaKeyPath  = "certs/rsa_sign_key.pem"
-	rsaCacertPath = "certs/rsa_CA.cer"
-	// sm2SignCertPath = "certs/sm2_sign_cert.cer"
-	// sm2SignKeyPath  = "certs/sm2_sign_key.pem"
-	// sm2EncCertPath  = "certs/sm2_enc_cert.cer"
-	// sm2EncKeyPath   = "certs/sm2_enc_key.pem"
-	// SM2CaCertPath   = "certs/SM2_CA.cer"
-	sm2UserCertPath = "certs/sm2_auth_cert.cer"
-	sm2UserKeyPath  = "certs/sm2_auth_key.pem"
+// rsaCertPath = "certs/rsa_sign.cer"
+// rsaKeyPath  = "certs/rsa_sign_key.pem"
+//rsaCacertPath = "certs/rsa_CA.cer"
+// sm2SignCertPath = "certs/sm2_sign_cert.cer"
+// sm2SignKeyPath  = "certs/sm2_sign_key.pem"
+// sm2EncCertPath  = "certs/sm2_enc_cert.cer"
+// sm2EncKeyPath   = "certs/sm2_enc_key.pem"
+// SM2CaCertPath   = "certs/SM2_CA.cer"
+//sm2UserCertPath = "certs/sm2_auth_cert.cer"
+//sm2UserKeyPath  = "certs/sm2_auth_key.pem"
 )
 
 func ServerRun() {
@@ -92,15 +92,20 @@ func gmClientRun() {
 		log.Fatal(err)
 	}
 	certPool.AppendCertsFromPEM(cacert)
-	cert, err := gmtls.LoadX509KeyPair(sm2UserCertPath, sm2UserKeyPath)
+	/* cert, err := gmtls.LoadX509KeyPair(websvr.SM2AuthCertPath, websvr.SM2AuthKeyPath)
+	if err != nil {
+		log.Fatal(err)
+	}
+	*/
 
 	config := &gmtls.Config{
-		GMSupport:    &gmtls.GMSupport{},
-		RootCAs:      certPool,
-		Certificates: []gmtls.Certificate{cert},
+		GMSupport:          &gmtls.GMSupport{},
+		RootCAs:            certPool,
+		Certificates:       []gmtls.Certificate{},
+		InsecureSkipVerify: true,
 	}
 
-	conn, err := gmtls.Dial("tcp", "localhost:50052", config)
+	conn, err := gmtls.Dial("tcp", "10.10.30.172:443", config)
 	if err != nil {
 		panic(err)
 	}
