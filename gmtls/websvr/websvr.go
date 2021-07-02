@@ -32,11 +32,11 @@ const (
 	RSAAuthKeyPath  = "./certs1/server.key"
 	SM2CaCertPath   = "./certs1/cacert.pem"
 	SM2AuthCertPath = "./certs1/03.pem"
-	SM2AuthKeyPath  = "./certs1/smauth1.key"
+	SM2AuthKeyPath  = "./certs1/smauth.key"
 	sm2SignCertPath = "./certs1/01.pem"
-	sm2SignKeyPath  = "./certs1/serversign1.key"
+	sm2SignKeyPath  = "./certs1/serversign.key"
 	sm2EncCertPath  = "./certs1/02.pem"
-	sm2EncKeyPath   = "./certs1/serverenc1.key"
+	sm2EncKeyPath   = "./certs1/serverenc.key"
 )
 
 // RSA配置
