@@ -33,13 +33,14 @@ const (
 func ServerRun() {
 	fmt.Println("ServerRun....")
 	//config, err := loadRsaConfig()
-	//config, err := loadSM2Config()
+	//config, err := websvr.LoadSM2Config()
 	config, err := websvr.LoadAutoSwitchConfig()
 	//config, err:=loadAutoSwitchConfigClientAuth()
 	if err != nil {
 		panic(err)
 	}
 
+	//config.CipherSuites = append(config.CipherSuites, gmtls.TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256)
 	ln, err := gmtls.Listen("tcp", ":50052", config)
 	if err != nil {
 		log.Println(err)

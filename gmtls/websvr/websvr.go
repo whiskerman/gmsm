@@ -30,13 +30,13 @@ const (
 	RSACaCertPath   = "./certs1/ca.crt"
 	RSAAuthCertPath = "./certs1/server.crt"
 	RSAAuthKeyPath  = "./certs1/server.key"
-	SM2CaCertPath   = "./certs1/cacert.pem"
-	SM2AuthCertPath = "./certs1/03.pem"
-	SM2AuthKeyPath  = "./certs1/smauth1.key"
-	sm2SignCertPath = "./certs1/01.pem"
-	sm2SignKeyPath  = "./certs1/serversign1.key"
-	sm2EncCertPath  = "./certs1/02.pem"
-	sm2EncKeyPath   = "./certs1/serverenc1.key"
+	SM2CaCertPath   = "/Users/sean/workspace/nginxcerts/cacert.pem"
+	SM2AuthCertPath = "/Users/sean/workspace/nginxcerts/certs/01.pem"
+	SM2AuthKeyPath  = "/Users/sean/workspace/nginxcerts/keys/signcert.key.pem"
+	sm2SignCertPath = "/Users/sean/workspace/nginxcerts/certs/01.pem"
+	sm2SignKeyPath  = "/Users/sean/workspace/nginxcerts/keys/signcert.key.pem"
+	sm2EncCertPath  = "/Users/sean/workspace/nginxcerts/certs/02.pem"
+	sm2EncKeyPath   = "/Users/sean/workspace/nginxcerts/keys/enccert.key.pem"
 )
 
 // RSA配置

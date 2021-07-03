@@ -92,19 +92,20 @@ func gmClientRun() {
 		log.Fatal(err)
 	}
 	certPool.AppendCertsFromPEM(cacert)
-	cert, err := gmtls.LoadX509KeyPair(websvr.SM2AuthCertPath, websvr.SM2AuthKeyPath)
+	/*cert, err := gmtls.LoadX509KeyPair(websvr.SM2AuthCertPath, websvr.SM2AuthKeyPath)
 	if err != nil {
 		log.Fatal(err)
 	}
-
+	*/
 	config := &gmtls.Config{
 		GMSupport:          &gmtls.GMSupport{},
 		RootCAs:            certPool,
-		Certificates:       []gmtls.Certificate{cert},
+		Certificates:       []gmtls.Certificate{}, //[]gmtls.Certificate{}, //
 		InsecureSkipVerify: true,
+		//	MaxVersion:         tls.VersionTLS12,
 	}
 
-	conn, err := gmtls.Dial("tcp", "192.168.1.3:443", config)
+	conn, err := gmtls.Dial("tcp", "10.10.10.13:50052", config)
 	if err != nil {
 		panic(err)
 	}
