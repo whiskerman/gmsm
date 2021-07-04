@@ -102,7 +102,7 @@ func gmClientRun() {
 		RootCAs:            certPool,
 		Certificates:       []gmtls.Certificate{}, //[]gmtls.Certificate{}, //
 		InsecureSkipVerify: true,
-		//	MaxVersion:         tls.VersionTLS12,
+		MaxVersion:         tls.VersionTLS12,
 	}
 
 	conn, err := gmtls.Dial("tcp", "10.10.10.13:50052", config)
