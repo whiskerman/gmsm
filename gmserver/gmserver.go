@@ -33,8 +33,8 @@ const (
 func ServerRun() {
 	fmt.Println("ServerRun....")
 	//config, err := loadRsaConfig()
-	//config, err := websvr.LoadSM2Config()
-	config, err := websvr.LoadAutoSwitchConfig()
+	config, err := websvr.LoadSM2Config()
+	//config, err := websvr.LoadAutoSwitchConfig()
 	//config, err:=loadAutoSwitchConfigClientAuth()
 	if err != nil {
 		panic(err)
