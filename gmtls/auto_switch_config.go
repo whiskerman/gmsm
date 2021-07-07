@@ -28,7 +28,7 @@ func NewBasicAutoSwitchConfig(sm2SigCert, sm2EncCert, stdCert *Certificate) (*Co
 	fncGetEncCertKeypair := func(info *ClientHelloInfo) (*Certificate, error) {
 		return sm2EncCert, nil
 	}
-	support := NewGMSupport()
+	support := &GMSupport{WorkMode: ModeAutoSwitch} //NewGMSupport()
 	support.EnableMixMode()
 	return &Config{
 		GMSupport:        support,

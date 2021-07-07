@@ -13,6 +13,7 @@ import (
 	"errors"
 	"fmt"
 	"io"
+	"log"
 	"strconv"
 	"sync/atomic"
 
@@ -193,6 +194,7 @@ func (hs *clientHandshakeStateGM) doFullHandshake() error {
 		// If this is the first handshake on a connection, process and
 		// (optionally) verify the server's certificates.
 		certs := make([]*x509.Certificate, len(certMsg.certificates))
+		log.Printf("handshakes  certs:%v", certs)
 		for i, asn1Data := range certMsg.certificates {
 			cert, err := x509.ParseCertificate(asn1Data)
 			if err != nil {
@@ -205,7 +207,7 @@ func (hs *clientHandshakeStateGM) doFullHandshake() error {
 				c.sendAlert(alertUnsupportedCertificate)
 				return fmt.Errorf("tls: pubkey type of cert is error, expect sm2.publicKey")
 			}
-
+			log.Printf("handshakes  cert index:%d", i)
 			//cert[0] is for signature while cert[1] is for encipher, refer to  GMT0024
 			//check key usage
 			switch i {
